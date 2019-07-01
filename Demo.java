@@ -4,9 +4,7 @@ import java.util.Map;
 import java.util.Scanner;
 import java.util.Stack;
 
-/**
- * Demo
- */
+
 public class Demo {
     static boolean is_opening_bracket(char s){
         if (s=='{'||s=='[' ||s=='(') {
@@ -31,7 +29,7 @@ public class Demo {
             Integer.parseInt(s);
             return  true;
         } catch (Exception e) {
-            //TODO: handle exception
+            
             return false;
         }
     }
@@ -57,7 +55,7 @@ public class Demo {
             if (is_opening_bracket(s)) {
                 if (c!=0) {
                     char chr=Character.forDigit(c, 10);
-                    // System.out.println(chr);
+                    
                     stk.add(chr);
                     c=0;
                 }
@@ -67,7 +65,7 @@ public class Demo {
             }else if(is_closing_bracket(s)){
                 if (c!=0) {
                     char chr=Character.forDigit(c, 10);
-                    // System.out.println(chr);
+                    
                     stk.add(chr);
                     c=0;
                 }
@@ -75,18 +73,14 @@ public class Demo {
                     total_star= is_integer(""+top_character_in_stack)?Character.getNumericValue(top_character_in_stack):-1;
                 }catch(EmptyStackException ese){}
                 
-                // System.out.println(total_star);
-                // System.out.println(s);
-                
                 if (total_star!=-1) {
                     try {
-                        // System.out.println(total_star);
+                        
                         if ( total_star%2==0) {
-                            // System.out.println(stk.isEmpty());
+                            
                             if (stk.isEmpty()==true) {
-                                // yes_pair++;
                                 no_pair++;
-                                // System.out.println(no_pair);
+                                
                             } 
                             else if(map.get(s)!=stk.peek()){no_pair++;}
                             else{yes_pair++;}
@@ -94,21 +88,13 @@ public class Demo {
                         }
                         
                         stk.pop();
-                    } catch (Exception e) {
-                        //TODO: handle exception
-                    }
+                    } catch (Exception e) {}
                     
                 } 
             }
         }
 
         System.out.println(no_pair!=0?"No "+no_pair:"Yes "+yes_pair);
-        // System.out.println(yes_pair);
-        // System.out.println(no_pair);
-        // [{, (, 2, {, 2, [, 2]
-        // System.out.println(stk);
-        // System.out.println("##########################################");
-        // System.out.println(total_star);
-        // System.out.println(is_integer(""+stk.get(index))?"Success":"Failure");
+       
     }
 }
