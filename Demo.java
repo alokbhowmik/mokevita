@@ -72,7 +72,6 @@ public class Demo {
                 try{top_character_in_stack=stk.pop();
                     total_star= is_integer(""+top_character_in_stack)?Character.getNumericValue(top_character_in_stack):-1;
                 }catch(EmptyStackException ese){}
-                
                 if (total_star!=-1) {
                     try {
                         
